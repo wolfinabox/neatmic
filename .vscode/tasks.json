@@ -1,0 +1,23 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Pyinstaller Win build",
+            "type": "shell",
+            "command": "${workspaceFolder}\\env\\scripts\\pyinstaller.exe --noconfirm --distpath ${workspaceFolder}\\deployment\\windows\\dist --workpath ${workspaceFolder}\\deployment\\windows\\build ${workspaceFolder}\\deployment\\windows\\neatmic.spec",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label":"Compile PySide UI Files",
+            "type":"shell",
+            "command":"${workspaceFolder}\\env\\scripts\\python ${workspaceFolder}\\.vscode\\compile_ui.py ${workspaceFolder}\\env\\scripts\\pyside6-uic.exe ${workspaceFolder}\\neatmic\\ui ${workspaceFolder}\\neatmic\\ui",
+            "problemMatcher": [],
+        }
+    ]
+}
