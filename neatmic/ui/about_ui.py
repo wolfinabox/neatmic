@@ -15,33 +15,33 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QDialog, QGridLayout, QSizePolicy,
-    QTextEdit)
+from PySide6.QtWidgets import (QApplication, QGridLayout, QSizePolicy, QTextEdit,
+    QWidget)
 
-class Ui_AboutDialog(object):
-    def setupUi(self, AboutDialog):
-        if not AboutDialog.objectName():
-            AboutDialog.setObjectName(u"AboutDialog")
-        AboutDialog.resize(424, 350)
-        AboutDialog.setModal(False)
-        self.gridLayout = QGridLayout(AboutDialog)
+class Ui_AboutWidget(object):
+    def setupUi(self, AboutWidget):
+        if not AboutWidget.objectName():
+            AboutWidget.setObjectName(u"AboutWidget")
+        AboutWidget.setProperty("modal", False)
+        AboutWidget.resize(424, 350)
+        self.gridLayout = QGridLayout(AboutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.textEdit = QTextEdit(AboutDialog)
-        self.textEdit.setObjectName(u"textEdit")
-        self.textEdit.setMinimumSize(QSize(0, 0))
-        self.textEdit.setReadOnly(True)
+        self.about_text = QTextEdit(AboutWidget)
+        self.about_text.setObjectName(u"about_text")
+        self.about_text.setMinimumSize(QSize(0, 0))
+        self.about_text.setReadOnly(True)
 
-        self.gridLayout.addWidget(self.textEdit, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.about_text, 0, 0, 1, 1)
 
 
-        self.retranslateUi(AboutDialog)
+        self.retranslateUi(AboutWidget)
 
-        QMetaObject.connectSlotsByName(AboutDialog)
+        QMetaObject.connectSlotsByName(AboutWidget)
     # setupUi
 
-    def retranslateUi(self, AboutDialog):
-        AboutDialog.setWindowTitle(QCoreApplication.translate("AboutDialog", u"About NeatMic", None))
-        self.textEdit.setPlaceholderText(QCoreApplication.translate("AboutDialog", u"About page here...", None))
+    def retranslateUi(self, AboutWidget):
+        AboutWidget.setWindowTitle(QCoreApplication.translate("AboutWidget", u"About NeatMic", None))
+        self.about_text.setPlaceholderText(QCoreApplication.translate("AboutWidget", u"About page here...", None))
     # retranslateUi
 

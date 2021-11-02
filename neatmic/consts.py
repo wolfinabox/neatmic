@@ -8,3 +8,5 @@ class WinPaths:
 
 version_num="CHANGEME"
 version_date="CHANGEME"
+project_link="https://neatmic.wolfinabox.com"
+docs_link="https://neatmic.wolfinabox.com"
